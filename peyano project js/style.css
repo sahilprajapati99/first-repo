@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fff;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 800px; /* Adjusted max-width for laptop/desktop screens */
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgb(4, 28, 49);
+}
+
+.wrapper header {
+    color: #a2a2a2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h2 {
+    font-size: 1.3rem;
+}
+
+header .column {
+    display: flex;
+    align-items: center;
+}
+
+.piano-keys .key {
+    user-select: none;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    color: #a2a2a2;
+    text-transform: uppercase;
+}
+
+.piano-keys .black {
+    width: 30px;
+    height: 100px;
+    z-index: 2;
+    margin: 0 -15px 0 -15px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(#302f2f 90%, #1b1818);
+}
+
+.piano-keys .white {
+    width: 50px;
+    height: 150px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: linear-gradient(#fff 90%, #eee);
+}
+
+.piano-keys {
+    display: flex;
+    margin-top: 20px;
+}
+
+header .column span {
+    font-weight: 500;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.vollume-slider input {
+    outline: none;
+    accent-color: #fff;
+}
+
+.kiys-checkbox input {
+    width: 40px;
+    height: 20px;
+    position: relative;
+    appearance: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #a2a2a2;
+}
+
+.kiys-checkbox input::before {
+    content: "";
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    border-radius: inherit;
+    left: 3px;
+    transform: translateY(-50%);
+    top: 50%;
+    background: #a2a2a2;
+    transition: all 0.3s ease;
+}
+
+.kiys-checkbox input:checked::before {
+    left: 23px;
+    background: #a2a2a2;
+}
+
+.piano-keys span {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.piano-keys .white:active {
+    box-shadow: inset -3px 3px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom #fff0, #eee);
+}
+
+.piano-keys .black:active {
+    box-shadow: inset -3px 3px 5px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom #000, #434343);
+}
+
+/* Media queries for laptop/desktop screens */
+@media only screen and (min-width: 768px) {
+    .wrapper {
+        padding: 40px; /* Adjusted padding for larger screens */
+    }
+
+    header h2 {
+        font-size: 1.6rem; /* Increased font size for larger screens */
+    }
+
+    header .column span {
+        font-size: 1.19rem; /* Increased font size for larger screens */
+        margin-right: 15px; /* Increased margin-right for larger screens */
+    }
+
+    .kiys-checkbox input {
+        width: 60px; /* Adjusted width for larger screens */
+        height: 30px; /* Adjusted height for larger screens */
+    }
+
+    .piano-keys span {
+        font-size: 1.13rem; /* Increased font size for larger screens */
+    }
+}
